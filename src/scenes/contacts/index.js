@@ -1,9 +1,8 @@
-import { Box } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { Box, useTheme } from "@mui/material";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
-import { useTheme } from "@mui/material";
 
 const Contacts = () => {
   const theme = useTheme();
@@ -51,12 +50,14 @@ const Contacts = () => {
     <Box m="20px">
       <Header
         title="CONTACTS"
-        subtitle="List of Contacts for future reference"
+        subtitle="List of Contacts for Future Reference"
       />
+
       <Box m="40px 0 0 0" height="75vh">
         <DataGrid
           rows={mockDataContacts}
           columns={columns}
+          slots={{ toolbar: GridToolbar }}
           sx={{
             "& .MuiDataGrid-root": {
               border: "none",
@@ -67,15 +68,14 @@ const Contacts = () => {
             "& .name-column--cell": {
               color: colors.greenAccent[300],
             },
-            "& .MUIDataGrid-columnHeaders": {
+            "& .MuiDataGrid-columnHeaders": {
               backgroundColor: colors.blueAccent[700],
               borderBottom: "none",
             },
-            "& MUIDataGrid-virtualScroller": {
+            "& .MuiDataGrid-virtualScroller": {
               backgroundColor: colors.primary[400],
             },
-
-            "& MUIDataGrid-footerContainer": {
+            "& .MuiDataGrid-footerContainer": {
               borderTop: "none",
               backgroundColor: colors.blueAccent[700],
             },

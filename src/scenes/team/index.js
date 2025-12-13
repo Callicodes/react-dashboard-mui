@@ -40,41 +40,40 @@ const Team = () => {
       field: "access",
       headerName: "Access Level",
       flex: 1,
-      renderCell: ({ row: { access } }) => {
-        return (
-          <Box
-            width="60%"
-            m="0 auto"
-            p="5px"
-            display="flex"
-            justifyContent="center"
-            backgroundColor={
-              access === "admin"
-                ? colors.greenAccent[600]
-                : colors.greenAccent[700]
-            }
-            borderRadius="4px"
-          >
-            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-            {access === "manager" && <SecurityOutlinedIcon />}
-            {access === "security" && <LockOpenOutlinedIcon />}
-            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
-              {access}
-            </Typography>
-          </Box>
-        );
-      },
+      renderCell: ({ row: { access } }) => (
+        <Box
+          width="60%"
+          m="0 auto"
+          p="5px"
+          display="flex"
+          justifyContent="center"
+          backgroundColor={
+            access === "admin"
+              ? colors.greenAccent[600]
+              : colors.greenAccent[700]
+          }
+          borderRadius="4px"
+        >
+          {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
+          {access === "manager" && <SecurityOutlinedIcon />}
+          {access === "security" && <LockOpenOutlinedIcon />}
+          <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
+            {access}
+          </Typography>
+        </Box>
+      ),
     },
   ];
 
   return (
     <Box m="20px">
       <Header title="TEAM" subtitle="Managing the Team Members" />
+
       <Box m="40px 0 0 0" height="75vh">
         <DataGrid
           rows={mockDataTeam}
           columns={columns}
-          components={{ Toolbar: GridToolbar }}
+          slots={{ toolbar: GridToolbar }}
           sx={{
             "& .MuiDataGrid-root": {
               border: "none",
@@ -85,17 +84,19 @@ const Team = () => {
             "& .name-column--cell": {
               color: colors.greenAccent[300],
             },
-            "& .MUIDataGrid-columnHeaders": {
+            "& .MuiDataGrid-columnHeaders": {
               backgroundColor: colors.blueAccent[700],
               borderBottom: "none",
             },
-            "& MUIDataGrid-virtualScroller": {
+            "& .MuiDataGrid-virtualScroller": {
               backgroundColor: colors.primary[400],
             },
-
-            "& MUIDataGrid-footerContainer": {
+            "& .MuiDataGrid-footerContainer": {
               borderTop: "none",
               backgroundColor: colors.blueAccent[700],
+            },
+            "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+              color: `${colors.grey[100]} !important`,
             },
           }}
         />
