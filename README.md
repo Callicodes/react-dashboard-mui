@@ -5,13 +5,13 @@ Built with **React, Redux, Material-UI, React Router, and Nivo**.
 
 ## Screenshots
 
-![Dashboard Overview](screenshots/dashboard-overview.png)  
-![Bar Chart](screenshots/bar.png)
-![Pie Chart](screenshots/pie.png)
-![Geography Chart](screenshots/geography.png)
-![Line Chart](screenshots/line.png)
-![Calendar Chart](screenshots/calendar.png)  
-![Team Page](screenshots/team.png)
+![Dashboard Overview](./src/screenshots/dashboard-overview.png)  
+![Bar Chart](./src/screenshots/bar.png)
+![Pie Chart](./src/screenshots/pie.png)
+![Geography Chart](./src/screenshots/geography.png)
+![Line Chart](./src/screenshots/line.png)
+![Calendar Chart](./src/screenshots/calendar.png)  
+![Team Page](./src/screenshots/team.png)
 
 ## Getting Started with Create React App
 
