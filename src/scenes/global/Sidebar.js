@@ -18,6 +18,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -32,7 +33,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   return (
     <MenuItem
       active={selected === title}
-      style={{ color: colors.grey[100] }}
+      style={{ color: colors.grey[100], fontFamily: "cursive" }}
       icon={icon}
       onClick={handleClick}
     >
@@ -52,13 +53,17 @@ const Sidebar = () => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
+          background: `linear-gradient(to bottom right, rgba(255, 255, 0, 0.05), rgba(255, 165, 0, 0.05), rgba(0, 0, 255, 0.05)) !important`,
+          position: "relative",
+          minHeight: "100vh",
         },
+
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
         },
         "& .pro-inner-item": {
           padding: "5px 35px 5px 20px !important",
+          fontFamily: "cursive",
         },
         "& .pro-inner-item:hover": {
           color: "#868dfb !important",
@@ -86,9 +91,18 @@ const Sidebar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>
-                  ADMIN
-                </Typography>
+                <Box display="flex" alignItems="center" gap="10px">
+                  <RemoveRedEyeOutlinedIcon
+                    sx={{ fontSize: 30, color: colors.grey[100] }}
+                  />
+                  <Typography
+                    variant="h5"
+                    color={colors.grey[100]}
+                    sx={{ fontFamily: "cursive" }}
+                  >
+                    Callicodes Analytics
+                  </Typography>
+                </Box>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
@@ -109,7 +123,7 @@ const Sidebar = () => {
             <Typography
               variant="h6"
               color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
+              sx={{ m: "15px 0 5px 20px", fontFamily: "cursive" }}
             >
               Data
             </Typography>
@@ -144,7 +158,7 @@ const Sidebar = () => {
             <Typography
               variant="h6"
               color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
+              sx={{ m: "15px 0 5px 20px", fontFamily: "cursive" }}
             >
               Pages
             </Typography>
@@ -173,7 +187,7 @@ const Sidebar = () => {
             <Typography
               variant="h6"
               color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
+              sx={{ m: "15px 0 5px 20px", fontFamily: "cursive" }}
             >
               Charts
             </Typography>
@@ -206,6 +220,8 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
           </Box>
+
+          <Box />
         </Menu>
       </ProSidebar>
     </Box>
