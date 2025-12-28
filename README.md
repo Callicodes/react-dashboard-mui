@@ -1,3 +1,8 @@
+
+# Project Overview
+
+This interactive Dashboard includes a calendar, an FAQ section, and a dynamic bar chart to help users organise information and visualise data efficiently. Built with React, Redux, Material-UI, React Router, and Nivo.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
